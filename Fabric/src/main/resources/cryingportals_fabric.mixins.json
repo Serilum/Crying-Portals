@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.natamus.cryingportals.fabric.mixin",
+  "plugin": "com.natamus.collective.fabric.mixin.plugin.FabricMixinConfigPlugin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  	"BaseFireBlockMixin",
+  	"PortalShapeMixin"
+  ],
+  "client": [
+  
+  ],
+  "server": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
