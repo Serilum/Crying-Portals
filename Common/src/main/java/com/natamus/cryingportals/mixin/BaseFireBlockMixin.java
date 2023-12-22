@@ -1,4 +1,4 @@
-package com.natamus.cryingportals.neoforge.mixin;
+package com.natamus.cryingportals.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,7 +23,7 @@ public class BaseFireBlockMixin {
 				return true;
 			}
 		}
-
+		
 		return false;
 	}
 }
