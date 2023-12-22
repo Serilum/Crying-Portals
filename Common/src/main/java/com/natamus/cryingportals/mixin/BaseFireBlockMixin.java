@@ -1,4 +1,4 @@
-package com.natamus.cryingportals.fabric.mixin;
+package com.natamus.cryingportals.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
