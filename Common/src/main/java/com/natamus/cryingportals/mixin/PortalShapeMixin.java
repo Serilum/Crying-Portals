@@ -1,4 +1,4 @@
-package com.natamus.cryingportals.neoforge.mixin;
+package com.natamus.cryingportals.mixin;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -21,10 +21,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class PortalShapeMixin {
 	@Shadow private static @Final @Mutable BlockBehaviour.StatePredicate FRAME;
 
-	@Inject(method = "<init>(Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction$Axis;)V", at = @At(value = "TAIL"))
-	private void PortalShape(LevelAccessor p_77695_, BlockPos p_77696_, Direction.Axis p_77697_, CallbackInfo ci) {
-		FRAME = (BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) -> {
-			return blockState.is(Blocks.OBSIDIAN) || blockState.getBlock() instanceof CryingObsidianBlock;
-		};
-	}
+    @Inject(method = "<init>(Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction$Axis;)V", at = @At(value = "TAIL"))
+    private void PortalShape(LevelAccessor p_77695_, BlockPos p_77696_, Direction.Axis p_77697_, CallbackInfo ci) {
+        FRAME = (BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) -> {
+            return blockState.is(Blocks.OBSIDIAN) || blockState.getBlock() instanceof CryingObsidianBlock;
+        };
+    }
 }
