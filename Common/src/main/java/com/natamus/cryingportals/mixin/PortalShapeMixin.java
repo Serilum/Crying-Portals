@@ -1,4 +1,4 @@
-package com.natamus.cryingportals.forge.mixin;
+package com.natamus.cryingportals.mixin;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
