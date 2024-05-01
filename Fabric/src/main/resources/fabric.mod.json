@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "cryingportals",
+  "version": "2.7",
+
+  "name": "Crying Portals",
+  "description": "Extends the blocks allowed for nether portal creation to use normal and crying obsidian.",
+  "authors": [ "Rick South" ],
+  "contact": {
+    "homepage": "https://serilum.com/mod/crying-portals",
+    "sources": "https://github.com/Serilum/Crying-Portals",
+    "issues": "https://github.com/Serilum/.issue-tracker/labels/Mod:%20Crying%20Portals"
+  },
+
+  "license": "All Right Reserved",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": { "main": [ "com.natamus.cryingportals.ModFabric" ] },
+  "mixins": [
+    "cryingportals.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric": "*",
+    "minecraft": ">=1.20",
+    "java": ">=21",
+    "collective": ">=7.55"
+  },
+
+  "custom": {
+    "modmenu": {
+      "links": {
+        "Donate <3" : "https://ricksouth.com/donate"
+      }
+    }
+  },
+
+  "contributors": [
+	  " ",
+	  "Thank you very much to my Membership sponsors for supporting the development of this mod!",
+	  " ",
+	  "If you would like to contribute too, check out https://serilum.com/donate.",
+	  " ",
+	  "Membership sponsors:",
+	  " Alister",
+	  " Andrean Olgo",
+	  " aternosorg",
+	  " BirdieMiner",
+	  " Cherriesaurus",
+	  " Jack",
+	  " Jeremy Langford",
+	  " Michael W. S.",
+	  " pepe1191",
+	  " Shana Gitnick",
+	  " Tyler Behl"
+  ]
+}
