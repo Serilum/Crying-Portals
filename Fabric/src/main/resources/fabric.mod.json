@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "cryingportals",
-  "version": "2.7",
+  "version": "2.8",
 
   "name": "Crying Portals",
   "description": "Extends the blocks allowed for nether portal creation to use normal and crying obsidian.",
@@ -26,7 +26,7 @@
     "fabric": "*",
     "minecraft": ">=1.20",
     "java": ">=21",
-    "collective": ">=7.55"
+    "collective": ">=7.78"
   },
 
   "custom": {
@@ -47,12 +47,9 @@
 	  " Alister",
 	  " Andrean Olgo",
 	  " aternosorg",
-	  " BirdieMiner",
 	  " Cherriesaurus",
-	  " Jack",
-	  " Jeremy Langford",
 	  " Michael W. S.",
-	  " pepe1191",
+	  " Nahuel Fernandez",
 	  " Shana Gitnick",
 	  " Tyler Behl"
   ]
