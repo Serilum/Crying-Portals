@@ -1,11 +1,7 @@
 package com.natamus.cryingportals.mixin;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.CryingObsidianBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.portal.PortalShape;
 import org.spongepowered.asm.mixin.Final;
@@ -16,14 +12,16 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.function.Predicate;
+
 @Mixin(value = PortalShape.class, priority = 1001)
 public class PortalShapeMixin {
-	@Shadow private static @Final @Mutable BlockBehaviour.StatePredicate FRAME;
+	@Shadow private static @Final @Mutable Predicate<BlockState> FRAME;
 
-    @Inject(method = "<init>(Lnet/minecraft/core/Direction$Axis;ILnet/minecraft/core/Direction;Lnet/minecraft/core/BlockPos;II)V", at = @At(value = "TAIL"))
-    private void PortalShape(Direction.Axis $$0, int $$1, Direction $$2, BlockPos $$3, int $$4, int $$5, CallbackInfo ci) {
-        FRAME = (BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) -> {
-            return blockState.is(Blocks.OBSIDIAN) || blockState.getBlock() instanceof CryingObsidianBlock;
-        };
-    }
+	@Inject(method = "<clinit>", at = @At(value = "TAIL"))
+	private static void PortalShape(CallbackInfo ci) {
+		FRAME = (BlockState blockState) -> {
+			return blockState.is(BlockTags.NETHER_PORTAL_FRAME) || blockState.getBlock() instanceof CryingObsidianBlock;
+		};
+	}
 }
