@@ -1,4 +1,4 @@
-package com.natamus.cryingportals.mixin;
+package com.serilum.cryingportals.mixin;
 
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.CryingObsidianBlock;

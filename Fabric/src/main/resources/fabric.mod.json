@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "id": "cryingportals",
-  "version": "2.9",
+  "version": "3.0",
 
   "name": "Crying Portals",
   "description": "Extends the blocks allowed for nether portal creation to use normal and crying obsidian.",
-  "authors": [ "Rick South" ],
+  "authors": [ "Serilum" ],
   "contact": {
     "homepage": "https://serilum.com/mod/crying-portals",
     "sources": "https://github.com/Serilum/Crying-Portals",
@@ -16,7 +16,7 @@
   "icon": "icon.png",
 
   "environment": "*",
-  "entrypoints": { "main": [ "com.natamus.cryingportals.ModFabric" ] },
+  "entrypoints": { "main": [ "com.serilum.cryingportals.ModFabric" ] },
   "mixins": [
     "cryingportals.mixins.json"
   ],
@@ -41,7 +41,7 @@
 	  " ",
 	  "Thank you very much to my Membership sponsors for supporting the development of this mod!",
 	  " ",
-	  "If you would like to contribute too, check out https://serilum.com/donate.",
+	  "If you would like to contribute too, check out https://serilum.com/donate",
 	  " ",
 	  "Membership sponsors:",
 	  " Andrean Olgo",
