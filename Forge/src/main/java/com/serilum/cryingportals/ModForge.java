@@ -1,8 +1,8 @@
-package com.natamus.cryingportals;
+package com.serilum.cryingportals;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
-import com.natamus.cryingportals.util.Reference;
+import com.serilum.cryingportals.util.Reference;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
