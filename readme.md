@@ -1,5 +1,5 @@
 <h2>Crying Portals</h2>
-<p><a href="https://github.com/Serilum/Crying-Portals"><img src="https://serilum.com/assets/images/logo/crying-portals.png"></a></p><h2>Download</h2>
+<p><a href="https://github.com/Serilum/Crying-Portals"><img src="https://workflow.serilum.com/web/logo/128/crying-portals.png" width="100" height="100"></a></p><h2>Download</h2>
 <p>You can download Crying Portals on CurseForge and Modrinth:</p><p>&nbsp;&nbsp;CurseForge: &nbsp;&nbsp;<a href="https://curseforge.com/minecraft/mc-mods/crying-portals">https://curseforge.com/minecraft/mc-mods/crying-portals</a><br>&nbsp;&nbsp;Modrinth: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://modrinth.com/mod/crying-portals">https://modrinth.com/mod/crying-portals</a></p>
 <h2>Issue Tracker</h2>
 <p>To keep a better overview of all mods, the issue tracker is located in a separate repository.<br>&nbsp;&nbsp;For issues, ideas, suggestions or anything else, please follow this link:</p>

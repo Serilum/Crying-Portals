@@ -1,4 +1,4 @@
-package com.natamus.cryingportals;
+package com.serilum.cryingportals;
 
 
 public class ModCommon {
