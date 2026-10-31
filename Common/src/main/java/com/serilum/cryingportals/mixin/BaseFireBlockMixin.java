@@ -1,29 +1,39 @@
 package com.serilum.cryingportals.mixin;
 
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyVariable;
-
+import com.serilum.cryingportals.util.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseFireBlock;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.portal.PortalShape;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = BaseFireBlock.class, priority = 1001)
 public class BaseFireBlockMixin {
-	@ModifyVariable(method = "isPortal", at = @At(value = "INVOKE", target="Lnet/minecraft/core/Direction;values()[Lnet/minecraft/core/Direction;"))
-	private static boolean BaseFireBlock_isPortal(boolean bl, Level level, BlockPos blockPos, Direction direction) {
-		BlockPos.MutableBlockPos mutableBlockPos = blockPos.mutable();
-		Direction[] var5 = Direction.values();
-		int var6 = var5.length;
+	@Shadow
+	private static boolean inPortalDimension(Level level) {
+		throw new AssertionError();
+	}
 
-		for (Direction direction2 : var5) {
-			if (level.getBlockState(mutableBlockPos.set(blockPos).move(direction2)).is(Blocks.CRYING_OBSIDIAN)) {
-				return true;
-			}
+	@Inject(method = "isPortal", at = @At(value = "RETURN"), cancellable = true)
+	private static void BaseFireBlock_isPortal(Level level, BlockPos blockPos, Direction direction, CallbackInfoReturnable<Boolean> cir) {
+		if (cir.getReturnValue()) {
+			return;
 		}
-		
-		return false;
+
+		if (!inPortalDimension(level)) {
+			return;
+		}
+
+		if (!Util.isNextToCryingObsidian(level, blockPos)) {
+			return;
+		}
+
+		Direction.Axis preferredAxis = Util.getPreferredPortalAxis(level, direction);
+		cir.setReturnValue(PortalShape.findEmptyPortalShape(level, blockPos, preferredAxis).isPresent());
 	}
 }

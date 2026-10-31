@@ -1,9 +1,7 @@
 package com.serilum.cryingportals.mixin;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CryingObsidianBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -20,10 +18,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class PortalShapeMixin {
 	@Shadow private static @Final @Mutable BlockBehaviour.StatePredicate FRAME;
 
-	@Inject(method = "<init>(Lnet/minecraft/core/Direction$Axis;ILnet/minecraft/core/Direction;Lnet/minecraft/core/BlockPos;II)V", at = @At(value = "TAIL"))
-	private void PortalShape(Direction.Axis $$0, int $$1, Direction $$2, BlockPos $$3, int $$4, int $$5, CallbackInfo ci) {
+	@Inject(method = "<clinit>", at = @At(value = "TAIL"))
+	private static void PortalShape(CallbackInfo ci) {
+		BlockBehaviour.StatePredicate originalFrame = FRAME;
 		FRAME = (BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) -> {
-			return blockState.is(Blocks.OBSIDIAN) || blockState.getBlock() instanceof CryingObsidianBlock;
+			return originalFrame.test(blockState, blockGetter, blockPos) || blockState.getBlock() instanceof CryingObsidianBlock;
 		};
 	}
 }
